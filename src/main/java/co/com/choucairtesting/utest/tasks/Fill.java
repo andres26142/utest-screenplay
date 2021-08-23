@@ -10,6 +10,8 @@ import net.serenitybdd.screenplay.actions.Hit;
 import net.serenitybdd.screenplay.actions.SelectFromOptions;
 import org.openqa.selenium.Keys;
 
+import static co.com.choucairtesting.utest.userinterface.AboutYourselfPage.*;
+
 public class Fill implements Task {
     private String strFistName;
     private String strLastName;
@@ -47,15 +49,15 @@ public class Fill implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Enter.theValue(strFistName).into(AboutYourselfPage.INPUT_FIRSTNAME),
-                Enter.theValue(strLastName).into(AboutYourselfPage.INPUT_LASTNAME),
-                Enter.theValue(strEmailAddress).into(AboutYourselfPage.INPUT_EMAIL),
-                SelectFromOptions.byVisibleText(strBirthMonth).from(AboutYourselfPage.INPUT_MONTH),
-                SelectFromOptions.byVisibleText(strBirthDay).from(AboutYourselfPage.INPUT_DAY),
-                SelectFromOptions.byVisibleText(strBirthYear).from(AboutYourselfPage.INPUT_YEAR),
-                Click.on(AboutYourselfPage.INPUT_LANGUAGE),
-                Enter.theValue(strUserLanguage).into(AboutYourselfPage.INPUT_LANGUAGE),
-                Hit.the(Keys.ENTER).keyIn(AboutYourselfPage.INPUT_LANGUAGE)
+                Enter.theValue(strFistName).into(INPUT_FIRSTNAME),
+                Enter.theValue(strLastName).into(INPUT_LASTNAME),
+                Enter.theValue(strEmailAddress).into(INPUT_EMAIL),
+                SelectFromOptions.byVisibleText(strBirthMonth).from(INPUT_MONTH),
+                SelectFromOptions.byVisibleText(strBirthDay).from(INPUT_DAY),
+                SelectFromOptions.byVisibleText(strBirthYear).from(INPUT_YEAR),
+                Click.on(INPUT_LANGUAGE),
+                Enter.theValue(strUserLanguage).into(INPUT_LANGUAGE),
+                Hit.the(Keys.ENTER).keyIn(INPUT_LANGUAGE)
 
 
         );

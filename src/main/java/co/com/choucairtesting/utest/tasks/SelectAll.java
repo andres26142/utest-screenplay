@@ -11,6 +11,8 @@ import net.serenitybdd.screenplay.matchers.WebElementStateMatchers;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import org.openqa.selenium.Keys;
 
+import static co.com.choucairtesting.utest.userinterface.DevicesPage.*;
+
 public class SelectAll implements Task {
     private String strComputerOs;
     private String strOsVersion;
@@ -34,36 +36,36 @@ public class SelectAll implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        actor.attemptsTo(Click.on(DevicesPage.BUTTON_NEXT_DEVICES),
+        actor.attemptsTo(Click.on(BUTTON_NEXT_DEVICES),
 
-                WaitUntil.the(DevicesPage.DATA_FROM_PC, WebElementStateMatchers.isEnabled()).forNoMoreThan(120).seconds(),
-                Click.on(DevicesPage.BUTTON_REMOVE_PC),
+                WaitUntil.the(DATA_FROM_PC, WebElementStateMatchers.isEnabled()).forNoMoreThan(120).seconds(),
+                Click.on(BUTTON_REMOVE_PC),
 
-                Click.on(DevicesPage.BUTTON_COMPUTER),
-                Enter.theValue(strComputerOs).into(DevicesPage.INPUT_COMPUTER),
-                Hit.the(Keys.DOWN).keyIn(DevicesPage.INPUT_COMPUTER),
-                Hit.the(Keys.ENTER).keyIn(DevicesPage.INPUT_COMPUTER),
-                Click.on(DevicesPage.BUTTON_VERSION),
-                Enter.theValue(strOsVersion).into(DevicesPage.INPUT_VERSION),
-                Hit.the(Keys.DOWN).keyIn(DevicesPage.INPUT_VERSION),
-                Hit.the(Keys.ENTER).keyIn(DevicesPage.INPUT_VERSION),
-                Click.on(DevicesPage.BUTTON_LANGUAGE_PC),
-                Enter.theValue(strComputerLanguage).into(DevicesPage.INPUT_LANGUAGE_PC),
-                Hit.the(Keys.DOWN).keyIn(DevicesPage.INPUT_LANGUAGE_PC),
-                Hit.the(Keys.ENTER).keyIn(DevicesPage.INPUT_LANGUAGE_PC),
+                Click.on(BUTTON_COMPUTER),
+                Enter.theValue(strComputerOs).into(INPUT_COMPUTER),
+                Hit.the(Keys.DOWN).keyIn(INPUT_COMPUTER),
+                Hit.the(Keys.ENTER).keyIn(INPUT_COMPUTER),
+                Click.on(BUTTON_VERSION),
+                Enter.theValue(strOsVersion).into(INPUT_VERSION),
+                Hit.the(Keys.DOWN).keyIn(INPUT_VERSION),
+                Hit.the(Keys.ENTER).keyIn(INPUT_VERSION),
+                Click.on(BUTTON_LANGUAGE_PC),
+                Enter.theValue(strComputerLanguage).into(INPUT_LANGUAGE_PC),
+                Hit.the(Keys.DOWN).keyIn(INPUT_LANGUAGE_PC),
+                Hit.the(Keys.ENTER).keyIn(INPUT_LANGUAGE_PC),
 
-                Click.on(DevicesPage.BUTTON_MOBILE),
-                Enter.theValue(strMobileDevice).into(DevicesPage.INPUT_MOBILE),
-                Hit.the(Keys.DOWN).keyIn(DevicesPage.INPUT_MOBILE),
-                Hit.the(Keys.ENTER).keyIn(DevicesPage.INPUT_MOBILE),
-                Click.on(DevicesPage.BUTTON_MODEL),
-                Enter.theValue(strModel).into(DevicesPage.INPUT_MODEL),
-                Hit.the(Keys.DOWN).keyIn(DevicesPage.INPUT_MODEL),
-                Hit.the(Keys.ENTER).keyIn(DevicesPage.INPUT_MODEL),
-                Click.on(DevicesPage.BUTTON_MOBILE_OS),
-                Enter.theValue(strMobileOs).into(DevicesPage.INPUT_MOBILE_OS),
-                Hit.the(Keys.DOWN).keyIn(DevicesPage.INPUT_MOBILE_OS),
-                Hit.the(Keys.ENTER).keyIn(DevicesPage.INPUT_MOBILE_OS)
+                Click.on(BUTTON_MOBILE),
+                Enter.theValue(strMobileDevice).into(INPUT_MOBILE),
+                Hit.the(Keys.DOWN).keyIn(INPUT_MOBILE),
+                Hit.the(Keys.ENTER).keyIn(INPUT_MOBILE),
+                Click.on(BUTTON_MODEL),
+                Enter.theValue(strModel).into(INPUT_MODEL),
+                Hit.the(Keys.DOWN).keyIn(INPUT_MODEL),
+                Hit.the(Keys.ENTER).keyIn(INPUT_MODEL),
+                Click.on(BUTTON_MOBILE_OS),
+                Enter.theValue(strMobileOs).into(INPUT_MOBILE_OS),
+                Hit.the(Keys.DOWN).keyIn(INPUT_MOBILE_OS),
+                Hit.the(Keys.ENTER).keyIn(INPUT_MOBILE_OS)
         );
     }
 }

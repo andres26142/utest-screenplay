@@ -10,6 +10,8 @@ import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.matchers.WebElementStateMatchers;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
+import static co.com.choucairtesting.utest.userinterface.PrivacyPage.*;
+
 public class Configue implements Task {
     private String strPassword;
 
@@ -24,15 +26,15 @@ public class Configue implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Click.on(PrivacyPage.BUTTON_LAST_STEP),
+                Click.on(BUTTON_LAST_STEP),
 
-                Enter.theValue(strPassword).into(PrivacyPage.PASSWORD),
-                Enter.theValue(strPassword).into(PrivacyPage.PASSWORD_CONFIRMATION),
-                Click.on(PrivacyPage.BUTTON_STAY_INFORMED),
-                Click.on(PrivacyPage.BUTTON_TERMS),
-                Click.on(PrivacyPage.BUTTON_PRIVACY_POLICY),
+                Enter.theValue(strPassword).into(PASSWORD),
+                Enter.theValue(strPassword).into(PASSWORD_CONFIRMATION),
+                Click.on(BUTTON_STAY_INFORMED),
+                Click.on(BUTTON_TERMS),
+                Click.on(BUTTON_PRIVACY_POLICY),
 
-                Click.on(PrivacyPage.BUTTON_COMPLETE));
+                Click.on(BUTTON_COMPLETE));
 
     }
 }

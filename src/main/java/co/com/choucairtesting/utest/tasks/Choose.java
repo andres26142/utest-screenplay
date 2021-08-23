@@ -10,6 +10,8 @@ import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.Hit;
 import org.openqa.selenium.Keys;
 
+import static co.com.choucairtesting.utest.userinterface.LocationPage.*;
+
 public class Choose implements Task {
     private String strCity;
     private String strZipPostalCode;
@@ -27,12 +29,12 @@ public class Choose implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        actor.attemptsTo(Click.on(LocationPage.BUTTON_NEXT_LOCATION),
-                Enter.theValue(strCity).into(LocationPage.INPUT_CITY),
-                Hit.the(Keys.DOWN).keyIn(LocationPage.INPUT_CITY),
-                Hit.the(Keys.ENTER).keyIn(LocationPage.INPUT_CITY),
-                Enter.theValue(strZipPostalCode).into(LocationPage.INPUT_CODE),
-                Click.on(LocationPage.BUTTON_COUNTRY),
-                Enter.theValue(strCountry).into(LocationPage.INPUT_COUNTRY));
+        actor.attemptsTo(Click.on(BUTTON_NEXT_LOCATION),
+                Enter.theValue(strCity).into(INPUT_CITY),
+                Hit.the(Keys.DOWN).keyIn(INPUT_CITY),
+                Hit.the(Keys.ENTER).keyIn(INPUT_CITY),
+                Enter.theValue(strZipPostalCode).into(INPUT_CODE),
+                Click.on(BUTTON_COUNTRY),
+                Enter.theValue(strCountry).into(INPUT_COUNTRY));
     }
 }

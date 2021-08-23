@@ -7,6 +7,8 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Click;
 
+import static co.com.choucairtesting.utest.userinterface.UtestPage.*;
+
 public class ClickOn implements Task {
     public static ClickOn joinToday() {
         return Tasks.instrumented(ClickOn.class);
@@ -14,6 +16,6 @@ public class ClickOn implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        actor.attemptsTo(Click.on(UtestPage.JOIN_TODAY_BUTTON));
+        actor.attemptsTo(Click.on(JOIN_TODAY_BUTTON));
     }
 }

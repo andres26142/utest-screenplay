@@ -14,27 +14,29 @@ import net.serenitybdd.screenplay.actors.OnlineCast;
 
 import java.util.List;
 
+import static net.serenitybdd.screenplay.actors.OnStage.*;
+
 public class UtestStepDefinitions {
     @Before
     public void setStage(){
-        OnStage.setTheStage(new OnlineCast());
+        setTheStage(new OnlineCast());
     }
 
     @Given("^that julian wants to sign up to utest$")
     public void thatJulianWantsToSignUpToUtest() {
-        OnStage.theActorCalled("Julian").wasAbleTo(OpenUp.thePage());
+        theActorCalled("Julian").wasAbleTo(OpenUp.thePage());
     }
 
 
     @When("^he clicks on the join today button$")
     public void heClicksOnTheJoinTodayButton() {
-        OnStage.theActorInTheSpotlight().attemptsTo(ClickOn.joinToday());
+        theActorInTheSpotlight().attemptsTo(ClickOn.joinToday());
 
     }
 
     @When("^he introduces his personal data$")
     public void heIntroducesHisPersonalData(List<UTestData> uTestData) {
-        OnStage.theActorInTheSpotlight().attemptsTo((Fill.thePersonalInfo(
+        theActorInTheSpotlight().attemptsTo((Fill.thePersonalInfo(
                 uTestData.get(0).getStrFistName(),
                 uTestData.get(0).getStrLastName(),
                 uTestData.get(0).getStrEmailAddress(),
@@ -43,12 +45,12 @@ public class UtestStepDefinitions {
                 uTestData.get(0).getStrBirthYear(),
                 uTestData.get(0).getStrUserLanguage()
         )));
-        OnStage.theActorInTheSpotlight().attemptsTo(Choose.theLocation(
+        theActorInTheSpotlight().attemptsTo(Choose.theLocation(
                 uTestData.get(0).getStrCity(),
                 uTestData.get(0).getStrZipPostalCode(),
                 uTestData.get(0).getStrCountry()
         ));
-        OnStage.theActorInTheSpotlight().attemptsTo(SelectAll.theDeviceInfo(
+        theActorInTheSpotlight().attemptsTo(SelectAll.theDeviceInfo(
                 uTestData.get(0).getStrComputerOs(),
                 uTestData.get(0).getStrOsVersion(),
                 uTestData.get(0).getStrComputerLanguage(),
@@ -56,7 +58,7 @@ public class UtestStepDefinitions {
                 uTestData.get(0).getStrModel(),
                 uTestData.get(0).getStrMobileOs()
         ));
-        OnStage.theActorInTheSpotlight().attemptsTo(Configue.thePrivacyOptions(
+        theActorInTheSpotlight().attemptsTo(Configue.thePrivacyOptions(
                 uTestData.get(0).getStrPassword()
         ));
 
@@ -65,6 +67,6 @@ public class UtestStepDefinitions {
 
     @Then("^the register is complete$")
     public void theRegisterIsComplete(List<UTestData> uTestData) {
-        OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat(Answer.toThe(uTestData.get(0).getStrSuccessfulSignUpMessage())));
+        theActorInTheSpotlight().should(GivenWhenThen.seeThat(Answer.toThe(uTestData.get(0).getStrSuccessfulSignUpMessage())));
     }
 }
